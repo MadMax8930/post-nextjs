@@ -20,6 +20,15 @@
    color: white;
 }
 
+.imgTitle {
+   font-style: italic;
+}
+
+.imgDesc {
+   font-style: italic;
+   color: rgb(243, 233, 233);
+}
+
 .txtContainer {
    display: flex;
    gap: 100px;
@@ -31,6 +40,10 @@
    display: flex;
    flex-direction: column;
    gap: 20px;
+}
+
+.title {
+   font-weight: 800;
 }
 
 .desc {

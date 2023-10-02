@@ -13,7 +13,7 @@ const About = () => {
          />
          <div className={styles.imgTxt}>
             <h1 className={styles.imgTitle}>Digital Storyteller</h1>
-            <h2 className={styles.imgDesc}>Handcrafting award winning digital experiences</h2>
+            <h4 className={styles.imgDesc}>Handcrafting award winning digital experiences</h4>
          </div>
       </div>
       <div className={styles.txtContainer}>
