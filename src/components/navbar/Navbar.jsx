@@ -1,6 +1,8 @@
 "use client"
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import LeafLogo from 'public/leaf.png'
 import styles from './navbar.module.css'
 
 const links = [
@@ -44,7 +46,10 @@ const links = [
 const Navbar = () => {
   return (
     <div className={styles.container}>
-      <Link href="/" className={styles.logo}>Maxou</Link>
+      <Link href="/" className={styles.logo}>
+         <Image src={LeafLogo} className={styles.leaf} alt="Logo" />
+         Listopad
+      </Link>
       <div className={styles.links}>
          {links.map(link => (
             <Link 

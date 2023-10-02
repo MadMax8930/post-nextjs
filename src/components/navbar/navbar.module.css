@@ -7,7 +7,14 @@
 
 .logo {
    font-weight: bold;
-   font-size: 22px; 
+   font-size: 22px;
+   display: flex;
+   align-items:center;
+}
+
+.leaf {
+   width: 36px;
+   height: 32px;
 }
 
 .links {

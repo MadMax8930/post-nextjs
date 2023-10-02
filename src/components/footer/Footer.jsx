@@ -5,7 +5,7 @@ import styles from './footer.module.css'
 const Footer = () => {
   return (
     <div className={styles.container}>
-      <div>&copy;2023 Maxou. All rights reserved.</div>
+      <div>&copy;2023 Listopad. All rights reserved.</div>
       <div className={styles.social}>
          <Image src="/1.png" width={15} height={15} className={styles.icon} alt="Facebook" />
          <Image src="/2.png" width={15} height={15} className={styles.icon} alt="Instagram" />
