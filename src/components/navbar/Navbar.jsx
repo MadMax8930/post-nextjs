@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import LeafLogo from 'public/leaf.png'
+import DarkMode from '@/components/darkm/DarkMode'
 import styles from './navbar.module.css'
 
 const links = [
@@ -46,6 +47,7 @@ const Navbar = () => {
          Listopad
       </Link>
       <div className={styles.links}>
+         <DarkMode />
          {links.map(link => (
             <Link 
                key={link.id} 
