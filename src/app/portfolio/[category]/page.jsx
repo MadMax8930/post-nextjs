@@ -1,8 +1,27 @@
 import React from 'react'
+import Image from 'next/image'
+import Button from '@/components/button/Button'
+import styles from './page.module.css'
 
-const Category = () => {
+const Category = ({ params }) => {
+   console.log(params)
   return (
-    <div>Category</div>
+    <div className={styles.container}>
+      <h1 className={styles.catTitle}>{params.category}</h1>
+      <div className={styles.item}>
+         <div className={styles.content}>
+            <h1 className={styles.title}>Test</h1>
+            <p className={styles.desc}>Desc</p>
+            <Button url="#" text="See More" />
+         </div>
+         <div className={styles.imgContainer}>
+            <Image
+               src={item.image} alt="Category"
+               fill={true} className={styles.img}
+            />
+         </div>      
+      </div>
+   </div>
   )
 }
 
