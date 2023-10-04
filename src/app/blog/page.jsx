@@ -4,10 +4,10 @@ import Image from 'next/image'
 import styles from './page.module.css'
 
 async function getData() {
-   const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+   const res = await fetch('http://localhost:3000/api/posts', {
       // cache: 'force-cache', // default behavior (cache indefinitely)
       // next: { revalidate: 10 }, // re-validates cached data every 10 sec
-      cache: 'no-store', // fetch fresh data on every request
+      // cache: 'no-store', // fetch fresh data on every request
    });
    if (!res.ok) throw new Error('Failed to fetch data');
    return res.json();
@@ -18,7 +18,7 @@ const Blog = async () => {
   return (
     <div className={styles.mainContainer}>
       {data.map((item) => (
-         <Link href="/blog/testId" className={styles.container} key={item.id}>
+         <Link href={`/blog/${item._id}`} className={styles.container} key={item._id}>
             <div className={styles.imgContainer}>
                <Image
                   src={item.img} alt="Blog"
