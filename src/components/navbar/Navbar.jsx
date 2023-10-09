@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import LeafLogo from 'public/leaf.png'
 import DarkMode from '@/components/darkm/DarkMode'
+import { signOut, useSession } from 'next-auth/react'
 import styles from './navbar.module.css'
 
 const links = [
@@ -40,6 +41,8 @@ const links = [
 ];
 
 const Navbar = () => {
+   const session = useSession();
+
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>
@@ -57,12 +60,11 @@ const Navbar = () => {
                {link.title}
             </Link>
          ))}
-         <button 
-            className={styles.logout}
-            onClick={() => { console.log("logged out")}}
-         >
-            Logout
-         </button>
+         {session.status === "authenticated" && (
+           <button className={styles.logout} onClick={signOut}>
+              Logout
+           </button>
+         )}
       </div>
     </div>
   )
