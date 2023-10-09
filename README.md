@@ -13,4 +13,4 @@ npm run dev
 ```
 
 ### 💎 UI:
-![plot](./assets/main.png)
+![plot](./public/main.png)
