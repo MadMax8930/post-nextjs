@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 const Register = () => {
-   const [err, setErr] = useState(false);
+   const [error, setError] = useState(null);
    const router = useRouter();
 
    const handleRegister = async (e) => {
@@ -21,12 +21,13 @@ const Register = () => {
             headers: {
                "Content-Type": "application/json",
             },
-            body: JSON.stringify({ name, email, password })
+            body: JSON.stringify({ name, email, password }),
          });
 
          res.status === 201 && router.push("/dashboard/login?success=Account has been created");
       } catch(err) {
-         setErr(true);
+         setError(err);
+         console.log(err);
       }
    }
   return (
@@ -37,7 +38,7 @@ const Register = () => {
          <input type="password" placeholder="password" className={styles.input} required />
          <button className={styles.button}>Register</button>
       </form>
-      {err && "Something went wrong!"}
+      {error && "Something went wrong!"}
       <Link href={"/dashboard/login"}>Login with an existing account</Link>
     </div>
   )
