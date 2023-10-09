@@ -33,7 +33,7 @@ const Dashboard = () => {
    const { data, error, isLoading } = useSWR(`/api/posts?username=${session?.data?.user.name}`, fetcher);
    console.log(data);
 
-   const handleSubmit = async (e) => {
+   const handleAddNew = async (e) => {
       e.preventDefault();
       const title = e.target[0].value;
       const desc = e.target[1].value;
@@ -91,7 +91,7 @@ const Dashboard = () => {
                   </div>
             ))}
          </div>
-         <form className={styles.new} onSubmit={handleSubmit}>
+         <form className={styles.new} onSubmit={handleAddNew}>
             <h1>Add New Post</h1>
             <input type="text" placeholder="Title" className={styles.input} />
             <input type="text" placeholder="Desc" className={styles.input} />
